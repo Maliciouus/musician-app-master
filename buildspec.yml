@@ -2,18 +2,23 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 18
     commands:
-      - echo Installing Bun...
-      - curl -fsSL https://bun.com/install | bash
-      - export PATH="/root/.bun/bin:$PATH"
-      - bun install
+      - echo Installing dependencies...
+      - npm install
 
   build:
     commands:
-      - echo Building app...
-      - bun run build || echo "No build step"
+      - echo Building the app...
+      - npm run build
+
+  post_build:
+    commands:
+      - echo Build complete.
+      - zip -r app.zip .
+      - aws s3 cp app.zip s3://your-bucket-name/
 
 artifacts:
   files:
     - '**/*'
-  base-directory: dist
