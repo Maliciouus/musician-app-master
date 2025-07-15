@@ -16,9 +16,19 @@ phases:
   post_build:
     commands:
       - echo Build complete.
+      - echo "Zipping app..."
       - zip -r app.zip .
-      - aws s3 cp app.zip s3://your-bucket-name/
-
+      - echo "Cloning GitHub repo..."
+      - git config --global user.email "aswinjothishsm@gmail.com"
+      - git config --global user.name "Maliciouus"
+      - git clone https://github.com/Maliciouus/musician-app-master.git
+      - cd musician-app-master
+      - git checkout -b build-artifacts || git checkout build-artifacts
+      - cp ../app.zip .
+      - git add app.zip
+      - git commit -m "Add new build artifact"
+      - git push origin build-artifacts
 artifacts:
   files:
     - '**/*'
+base-directory: dist
