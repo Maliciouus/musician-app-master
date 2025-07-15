@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon app.js",
-    "start-dev": "nodemon app.js"
+    "start-dev": "node app.js"
     "build": "echo 'No build step for plain Node.js'"
 
   },
