@@ -8,6 +8,7 @@ phases:
       - npm -v
       - pwd
       - npm install -g npm
+      - ls -a
       - echo Installing dependencies...
      
 
