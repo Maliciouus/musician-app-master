@@ -6,6 +6,7 @@ phases:
       nodejs: 18
     commands:
       - npm -v
+      - pwd
       - npm install -g npm
       - echo Installing dependencies...
      
