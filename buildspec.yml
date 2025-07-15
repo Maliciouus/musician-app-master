@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing Bun...
+      - curl -fsSL https://bun.sh/install | bash
+      - export PATH="/root/.bun/bin:$PATH"
+      - bun install
+
+  build:
+    commands:
+      - echo Building app...
+      - bun run build || echo "No build step"
+
+artifacts:
+  files:
+    - '**/*'
