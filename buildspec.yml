@@ -4,9 +4,9 @@ phases:
   install:
     commands:
       - echo Installing Bun...
-      - curl -fsSL https://bun.sh/install | bash
+      - curl -fsSL https://bun.com/install | bash
       - export PATH="/root/.bun/bin:$PATH"
-      - npm install
+      - bun install
 
   build:
     commands:
