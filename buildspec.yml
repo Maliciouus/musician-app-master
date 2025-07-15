@@ -5,9 +5,10 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
+      - cd client
       - npm -v
       - pwd
-      - npm install -g npm
+      - npm install
       - ls -a
       - echo Installing dependencies...
      
