@@ -26,7 +26,7 @@ phases:
       - echo "Cloning GitHub repo..."
       - git config --global user.email "aswinjothishsm@gmail.com"
       - git config --global user.name "Maliciouus"
-      - git clone https://github.com/Maliciouus/musician-app-master.git
+      - git clone https://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@github.com/Maliciouus/musician-app-master.git
       - cd musician-app-master
       - git checkout -b build-artifacts || git checkout build-artifacts
       - cp ../app.zip .
